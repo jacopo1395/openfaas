@@ -46,7 +46,7 @@ Some example functions using OpenFaaS.
 * **Success Response:** **Content:** success message
  
 * **Error Response:** error message
-* **Note:** the bot sends me a message to my personal account
+* **Note:** the bot sends me a message to my *personal* account
 
 # Presentation
 <a href="https://github.com/jacopo1395/openfaas/blob/master/OpenFaaS.pdf">Click here</a>
