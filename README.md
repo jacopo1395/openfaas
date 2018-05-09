@@ -16,7 +16,7 @@ Some example functions using OpenFaaS.
  
 * **Error Response:** error message
 
----
+
 
 ### Grey
   _Make black and white a photo given a URL of the image._
@@ -32,7 +32,7 @@ Some example functions using OpenFaaS.
 * **Error Response:** error message
 
 
----
+
 
 ### Telegram
   _IFTTT bot sends me a telegram message given a text._
