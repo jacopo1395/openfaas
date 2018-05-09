@@ -32,8 +32,8 @@ def weather():
 
 def telegram():
     r = requests.post('http://127.0.0.1:8080/function/telegram', data='Hi everyone!')
-    print ('ok, I send you a message')
-    os.system('say "ok, I send you a message"')
+    print ('ok, I did')
+    os.system('say "ok, I did"')
 
 if len(sys.argv) != 3:
     print("Error: need to specify 2 model names")
