@@ -1,6 +1,7 @@
 # Functions
 
 ## Easy
+
 **mean**
 ``` json
 {"data":[1,2,3,...]}
@@ -15,10 +16,14 @@
 ```
 
 ## Medium
+
 **peakdetection**
 ``` json
 {"data":[1,2,3,...]}
 ```
+
+## Hard
+
 **kmeans**
 ``` json
 {
@@ -36,7 +41,6 @@
 len(dataset) >= n_clusters
 
 
-## Hard
 
 **kmeans**
 ``` json

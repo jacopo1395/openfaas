@@ -40,6 +40,10 @@ def peakdetection(json_obj):
     r = requests.post('http://127.0.0.1:8080/function/peakdetection', data=json_obj)
     # print(r)
 
+def regression(json_obj):
+    r = requests.post('http://127.0.0.1:8080/function/regression', data=json_obj)
+    # print(r)
+
 
 j = {"data":[1,2,3]}
 array = json.dumps(j)
@@ -64,3 +68,25 @@ j = {
 
 json_data = json.dumps(j)
 test(kmeans, json_data)
+
+j={
+    "X_train":[
+
+            {"vector":[1]},
+            {"vector":[2]},
+            {"vector":[3]}
+
+    ],
+    "X_test":[
+
+            {"vector":[1]},
+            {"vector":[2]},
+            {"vector":[3]}
+
+    ],
+    "y_train":[1,2,3],
+    "y_test":[1,2,3]
+}
+
+json_data = json.dumps(j)
+test(regression, json_data)
