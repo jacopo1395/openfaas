@@ -26,7 +26,9 @@ def weather():
     temp = str(r.json()['main']['temp'])
     res = 'in Rome now there is '+res+' and the temperature is '+temp+' degrees celsius'
     cmd = 'say '+res
+    print("")
     print (res)
+    print("")
     # subprocess.check_output(['say', res])
     os.system(cmd)
 
@@ -35,12 +37,13 @@ def telegram():
     print ('ok, I did')
     os.system('say "ok, I did"')
 
-if len(sys.argv) != 3:
-    print("Error: need to specify 2 model names")
-    print("Usage: python demo.py 1st.model 2nd.model")
+if len(sys.argv) == 1:
+    print("Error: need to specify model name")
+    print("Usage: python demo.py your.model")
     sys.exit(-1)
 
-models = sys.argv[1:]
+model = sys.argv[1]
+
 
 # capture SIGINT signal, e.g., Ctrl+C
 signal.signal(signal.SIGINT, signal_handler)
@@ -48,14 +51,14 @@ signal.signal(signal.SIGINT, signal_handler)
 w = weather
 t = telegram
 
-sensitivity = [0.5]*len(models)
-detector = snowboydecoder.HotwordDetector(models, sensitivity=0.5)
+# sensitivity = [0.5]*len(models)
+detector = snowboydecoder.HotwordDetector(model, sensitivity=0.5)
 print('Listening... Press Ctrl+C to exit')
 
-
 # main loop
-detector.start(detected_callback=[w,t],
-               interrupt_check=interrupt_callback,
-               sleep_time=0.03)
+detector.start(detected_callback=w,
+                interrupt_check=interrupt_callback,
+                sleep_time=0.03)
+
 
 detector.terminate()

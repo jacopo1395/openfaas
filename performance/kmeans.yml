@@ -1,0 +1,9 @@
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+
+functions:
+  kmeans:
+    lang: python3-debian
+    handler: ./kmeans
+    image: kmeans

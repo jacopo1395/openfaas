@@ -12,8 +12,10 @@ download.image(options)
         img.greyscale() // set greyscale
             .write("img.jpg"); // save
         // callback(undefined, {status: "done"});
+        console.log("ok");
     });
 
 }).catch((err) => {
     // callback(err, {status: "error"});
+    console.log(err);
 })
