@@ -1,6 +1,6 @@
 import requests
 import time
-import numpy as np
+import json
 
 
 def collect_data():
@@ -20,21 +20,47 @@ def test(function, data):
     print("")
 
 
-def call_mean(array):
+def mean(array):
     r = requests.post('http://127.0.0.1:8080/function/mean', data=array)
-    print(r)
+    # print(r)
 
-def call_min():
+def minimun(array):
     r = requests.post('http://127.0.0.1:8080/function/min', data=array)
-    print(r)
+    # print(r)
 
-def call_max():
+def maximum(array):
     r = requests.post('http://127.0.0.1:8080/function/max', data=array)
-    print(r)
+    # print(r)
+
+def kmeans(json_obj):
+    r = requests.post('http://127.0.0.1:8080/function/kmeans', data=json_obj)
+    # print(r)
+
+def peakdetection(json_obj):
+    r = requests.post('http://127.0.0.1:8080/function/peakdetection', data=json_obj)
+    # print(r)
 
 
-array = "5,21.5,-9"
+j = {"data":[1,2,3]}
+array = json.dumps(j)
 
-test(call_mean, array)
-test(call_min, array)
-test(call_max, array)
+test(mean, array)
+test(minimun, array)
+test(maximum, array)
+test(peakdetection, array)
+
+
+j = {
+    "dataset":[
+
+            {"vector":[1,2]},
+            {"vector":[5,8]},
+            {"vector":[8,8]},
+            {"vector":[1,0.6]},
+            {"vector":[9,11]}
+    ],
+    "n_clusters": 2
+}
+
+json_data = json.dumps(j)
+test(kmeans, json_data)
