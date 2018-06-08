@@ -4,11 +4,14 @@ import threading
 import random
 
 import openfaas
+import rabbitmq
 import matplotlib.pyplot as plt
 
 
 # Data ################
-j = {"data":[1,2,3]}
+j = {"data":[]}
+data = rabbitmq.dataset_temp();
+j["data"] = data
 array = json.dumps(j)
 
 j={
@@ -46,6 +49,7 @@ j = {
 
 json_data2 = json.dumps(j)
 #########################
+# print(array)
 
 def rand_color(n):
     return (random.uniform(0.0, 1.0),random.uniform(0.0, 1.0),random.uniform(0.0, 1.0) )
