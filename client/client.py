@@ -6,6 +6,9 @@ import random
 import openfaas
 import rabbitmq
 import matplotlib.pyplot as plt
+import sys
+
+# print(sys.argv)
 
 
 # Data ################
@@ -64,49 +67,49 @@ def consumer(cond, lvl):
         if lvl==3:
             openfaas.kmeans(json_data2)
 
+if (len(sys.argv)<4):
+    print("How to use:")
+    print("\tpython3 client.py <max_threads> <step_range> <max_difficulty> ")
+    sys.exit("\nERROR: few parameters")
 
 print("Start with different number of threads and Difficulty")
 print("1=mean/min/max - 2=peak detection - 3=kmeans/regression")
-n=11
-for lvl in range(1,4):
-    print(lvl)
+n = int(sys.argv[1]) + 2
+step = int(sys.argv[2])
+d = int(sys.argv[3]) + 1
+for lvl in range(1,d):
     latency = []
-    for i in range (1,n):
-        # print(i)
+    for i in range (1,n,step):
         condition = threading.Condition()
         threads = []
-        for j in range(0,i*1): # start all threads
+        # start all threads
+        for j in range(0,i):
             t = threading.Thread(name='t', target=consumer, args=(condition,lvl))
             threads.append(t)
             t.start()
-        # print("start")
-        before = int(round(time.time() * 1000)) # start time
 
+        # start time
+        before = int(round(time.time() * 1000))
         with condition:
             condition.notifyAll()
         for t in threads:
             t.join()
-
-        after = int(round(time.time() * 1000)) # stop time
+        # stop time
+        after = int(round(time.time() * 1000))
         delta = after-before
-        # print("stop")
 
-        # print("")
+        print("")
         print("Threads: " + str(len(threads)))
-        # print("Difficulty: " + str(lvl))
-        # print("Milliseconds: " + str(delta))
-        # print("Latency: " + str(delta/len(threads)))
+        print("Difficulty: " + str(lvl))
+        print("Milliseconds: " + str(delta))
+        print("Latency: " + str(delta/len(threads)))
         latency.append(delta/len(threads))
-    plt.plot(range(1,n), latency, color=rand_color(i), label="Difficulty "+str(lvl))
+    plt.plot(range (1,n,step), latency, color=rand_color(i), label="Difficulty "+str(lvl))
 plt.ylabel('Milliseconds')
 plt.xlabel('Threads')
 plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 plt.show()
 
-
-def collect_data():
-    # TODO
-    print("todo")
 
 
 # openfaas.test(openfaas.mean, array)
