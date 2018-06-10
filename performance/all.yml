@@ -1,0 +1,29 @@
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+
+functions:
+  mean:
+    lang: python
+    handler: ./mean
+    image: mean
+  max:
+    lang: python
+    handler: ./max
+    image: max
+  min:
+    lang: python
+    handler: ./min
+    image: min
+  peakdetection:
+    lang: python3-debian
+    handler: ./peakdetection
+    image: peakdetection
+  kmeans:
+    lang: python3-debian
+    handler: ./kmeans
+    image: kmeans
+  regression:
+    lang: python3-debian
+    handler: ./regression
+    image: regression

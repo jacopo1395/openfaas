@@ -1,0 +1,17 @@
+provider:
+  name: faas
+  gateway: http://192.168.1.141:8080
+
+functions:
+  means:
+    lang: python3-armhf
+    handler: ./means
+    image: means
+  peakdetection:
+    lang: python3-debian
+    handler: ./peakdetection
+    image: peakdetection
+  kmeans:
+    lang: python3-armhf
+    handler: ./kmeans
+    image: kmeans
