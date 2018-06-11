@@ -42,7 +42,7 @@ len(dataset) >= n_clusters
 
 
 
-**kmeans**
+**regression**
 ``` json
 {
     "X_train":[
