@@ -7,11 +7,14 @@ The client.py tries with different number of threads to execute 3 kinds of funct
 
 **max_threads**: the maximum number of Threads (range from 1 to max_threads)
 <step_range> <max_difficulty>
+
 **step_range**: client.py tries from 1 to max_threads with a step of step_range
 <step_range> <max_difficulty>
-**max_difficulty**: client.py executes the functions from easy level up to max_difficulty
+
+**max_difficulty**: client.py executes the functions from easy level up to max_difficulty (easy=1, medium=2, hard=3)
 
 # Results
 Here you can see the results in the result.txt files in this repository.
+![alt text](https://raw.githubusercontent.com/jacopo1395/openfaas/master/client/Easy-Medium-Hard_10Threads.png)
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/jacopo1395/openfaas/master/client/Easy_1000Threads.png)
