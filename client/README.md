@@ -13,4 +13,5 @@ The client.py tries with different number of threads to execute 3 kinds of funct
 
 # Results
 Here you can see the results in the result.txt files in this repository.
+
 ![alt text]()
