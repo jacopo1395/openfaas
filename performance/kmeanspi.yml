@@ -3,7 +3,7 @@ provider:
   gateway: http://192.168.1.141:8080
 
 functions:
-  kmeans:
+  kmeanspi:
     lang: python3-armhf
-    handler: ./kmeans
-    image: kmeans
+    handler: ./kmeanspi
+    image: kmeanspi
