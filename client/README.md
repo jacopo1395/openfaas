@@ -2,7 +2,7 @@
 This is a project to perform a benchmark on openfaas.
 
 The client.py spawns a different number of threads (you choose how many) and executes one of the three types of functions (you choose which one) with different computational costs: *Easy*, *Medium* and *Hard*.
-All the threads perform the **same function** and start at the **same time**.
+All the threads perform the call of the **same function** to openfaas and start at the **same time**.
 
 # Functions
 
@@ -82,7 +82,7 @@ Each function is accessible via a **POST request** with parameter a **JSON objec
 
 # Datasets
 
-To test the functions I used a real time datasets. You can find it in the datasets folder in this repository.
+To test the functions I used a real time datasets. You can find it in the [datasets folder](https://github.com/jacopo1395/openfaas/tree/master/client/datasets).
 In the directory there are some text file and in each file there are data coming from a type of sensor.
 
 You can update manually the datasets at any time by running `python3 rabbitmq.py`.
