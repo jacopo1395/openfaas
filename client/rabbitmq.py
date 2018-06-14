@@ -19,7 +19,7 @@ def download(n):
     # print "ciao"
     first = res[0]["payload"].split(",")[2]
     last = res[len(res)-1]["payload"].split(",")[2]
-    print (int(last)-int(first))
+    # print (int(last)-int(first))
 
     for name in os.listdir("./datasets"):
         # print name
@@ -64,7 +64,9 @@ def dataset_humid():
     return dataset("./datasets/dataset_humid.txt");
 
 
-download(100000000000000000)
+# download(10000000000000)
+
+
 # curl 'http://broker.sparkworks.net/api/queues/%2F/ichatz-annotated-readings/get'
 # -H 'authorization: Basic aWNoYXR6OmoycGV3cWNLNGtIOUFhRFFrb3p4'
 # -H 'Origin: http://broker.sparkworks.net'
