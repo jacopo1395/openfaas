@@ -132,14 +132,6 @@ The latency is the equals to time/n_threads.
 For each processor there is a latency based on the type of function.
 
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-p8bj{font-weight:bold;border-color:inherit;vertical-align:top}
-.tg .tg-7btt{font-weight:bold;border-color:inherit;text-align:center;vertical-align:top}
-</style>
 <table class="tg">
   <tr>
     <th class="tg-p8bj">Processor</th>
@@ -149,7 +141,7 @@ For each processor there is a latency based on the type of function.
     <th class="tg-7btt">Hard</th>
   </tr>
   <tr>
-    <td class="tg-c3ow" rowspan="3"><br><br>i7 3610QM</td>
+    <td class="tg-c3ow" rowspan="3"><br>i7 3610QM</td>
     <td class="tg-c3ow">1</td>
     <td class="tg-c3ow">0.002000</td>
     <td class="tg-c3ow">0.001000</td>
@@ -170,13 +162,16 @@ For each processor there is a latency based on the type of function.
 </table>
 
 ## Chart
+You can generate a chart with the result.txt file using:
 
-Test on i7 3610QM, from 1 to 11 threads, all the types of functions:
+`python3 chart.py`
+
+----
+
+Test on i7 3610QM, from 1 to 100 threads, all the types of functions:
+![alt text](https://raw.githubusercontent.com/jacopo1395/openfaas/master/client/Figure_1.png)
+
+
+Test on Raspberry Pi, from 1 to 100 threads, all the types of functions:
 ![alt text]()
 
-
-Test on i7 3610QM, from 1 to 100 threads, only easy functions:
-![alt text]()
-
-
-Other tests coming soon.
