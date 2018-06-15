@@ -52,18 +52,20 @@ int main(int argc, char const* argv[]) {
 
     for (int i=1; i<lvl+1; i++){
         // printf("lvl\n");
-        for (int j = 1; j < max; j=j+step) {
+        for (int j = 0; j <= max; j=j+step) {
+            int j1 = j;
+            if (j==0) j1=1;
             // printf("threads\n");
             pthread_t threads[max];
             clock_t begin = clock();
-            for (int k = 1; k < j; k++) {
+            for (int k = 1; k < j1; k++) {
                 int ret = pthread_create (&threads[k], NULL, work, (void *)&i);
                 if (ret){
                     printf("ERROR; return code from pthread_create() is %d\n",ret);
                     exit(-1);
                 }
             }
-            for (int k = 1; k < j; k++) {
+            for (int k = 1; k < j1; k++) {
                 pthread_join(threads[k], NULL);
             }
             clock_t end = clock();
@@ -74,8 +76,8 @@ int main(int argc, char const* argv[]) {
                 printf("Error opening file!\n");
                 exit(1);
             }
-            fprintf(f, "%d,%d,%lf,%lf\n", i,j,time_spent,time_spent/max);
-            printf("%d,%d,%lf,%lf\n", i,j,time_spent,time_spent/max);
+            fprintf(f, "%d,%d,%lf,%lf\n", i,j1,time_spent,time_spent/j1);
+            printf("%d,%d,%lf,%lf\n", i,j1,time_spent,time_spent/j1);
             fclose(f);
         }
     }
