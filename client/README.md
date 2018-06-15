@@ -116,7 +116,7 @@ command:
 Logic in C code:
 ```C
 for (int i=1; i<max_difficulty; i++){
-    for (int j=1; j<max_threads; j+=step_range){
+    for (int j=1; j<=max_threads; j+=step_range){
         // call to openfaas function
     }
 }
@@ -141,7 +141,7 @@ For each processor there is a latency based on the type of function.
     <th class="tg-7btt">Hard</th>
   </tr>
   <tr>
-    <td class="tg-c3ow" rowspan="3"><br>i7 3610QM</td>
+    <td class="tg-c3ow" rowspan="3">i7 3610QM</td>
     <td class="tg-c3ow">1</td>
     <td class="tg-c3ow">0.002000</td>
     <td class="tg-c3ow">0.001000</td>
