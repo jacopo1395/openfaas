@@ -13,15 +13,15 @@ def maximum(array):
     # print(r)
 
 def kmeans(json_obj):
-    r = requests.post('http://127.0.0.1:8080/function/kmeans', data=json_obj)
+    r = requests.post('http://127.0.0.1:8080/function/kmeansjs', data=json_obj)
     # print(r)
 
 def peakdetection(json_obj):
-    r = requests.post('http://127.0.0.1:8080/function/peakdetection', data=json_obj)
+    r = requests.post('http://127.0.0.1:8080/function/peakdetectionjs', data=json_obj)
     # print(r)
 
 def regression(json_obj):
-    r = requests.post('http://127.0.0.1:8080/function/regression', data=json_obj)
+    r = requests.post('http://127.0.0.1:8080/function/regressionjs', data=json_obj)
     # print(r)
 
 
