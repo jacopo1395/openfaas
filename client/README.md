@@ -92,7 +92,16 @@ Each file is in CSV format (Comma-separated values):
 
 To perform the benchmark a thread use this dataset and sends it in JSON format with a POST request to openfaas.
 
+## Example
 
+This is a snippet of dataset file with the values of a temperature sensor
+
+```
+0013a20040c24039/0x312/temp,1528986126981,29.89
+0013a200409c168b/0x383/temp,1528986127363,34.79
+0013a20040a1d47f/0xa97/temp,1528986127402,26.0
+0013a20040a1d88c/0x694/temp,1528986127941,35.13
+```
 
 # How to Run
 ## Compilation
@@ -111,12 +120,14 @@ command:
 
 - **max_difficulty**: start.c executes the functions from easy level up to max_difficulty (easy=1, medium=2, hard=3).
 
-*Example*: `./a.out 7 3 2` call the easy function with 1 thread then with 4 and finally with 7 threads; call the medium function with 1 then 4 and finally 7 threads.
+
+*Example*: `./a.out 10 5 2` call the easy function with 1 thread then with 5 and finally with 10 threads; call the medium function with 1 then 5 and finally 10 threads.
 
 Logic in C code:
 ```C
-for (int i=1; i<max_difficulty; i++){
-    for (int j=1; j<=max_threads; j+=step_range){
+for (int i=1; i<=max_difficulty; i++){
+    for (int j=0; j<=max_threads; j+=step_range){
+        // if j=0 is considered equals 1
         // call to openfaas function
     }
 }
@@ -218,6 +229,8 @@ For each processor there is a latency based on the type of function.
   </tr>
 </table>
 
+To see detailed results open "result_*.txt" files in this repository.
+
 ## Chart
 You can generate a chart with the result.txt file using:
 
@@ -226,8 +239,11 @@ You can generate a chart with the result.txt file using:
 ----
 
 Test on i7 3610QM, from 1 to 100 threads, all the types of functions:
-![alt text](https://raw.githubusercontent.com/jacopo1395/openfaas/master/client/Figure_1.png)
+![alt text](https://raw.githubusercontent.com/jacopo1395/openfaas/master/client/Figure_i7-3610QM.png)
 
 
-Test on Raspberry Pi, from 1 to 100 threads, all the types of functions:
-![alt text]()
+Test on Raspberry Pi, from 1 to 10 threads, all the types of functions:
+![alt text](https://raw.githubusercontent.com/jacopo1395/openfaas/master/client/Figure_pi.png)
+
+Test on Docker Swarm with two i7 processors, from 1 to 100 threads, all the types of functions:
+![alt text](https://raw.githubusercontent.com/jacopo1395/openfaas/master/client/Figure_swarm.png)
