@@ -141,6 +141,25 @@ For each processor there is a latency based on the type of function.
     <th class="tg-7btt">Hard</th>
   </tr>
   <tr>
+    <td class="tg-c3ow" rowspan="3">Raspberry Pi</td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">0.005000</td>
+    <td class="tg-c3ow">0.002000</td>
+    <td class="tg-c3ow">0.003000</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">0.723200</td>
+    <td class="tg-c3ow">0.688400</td>
+    <td class="tg-c3ow">0.726100</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">100</td>
+    <td class="tg-c3ow">-</td>
+    <td class="tg-c3ow">-</td>
+    <td class="tg-c3ow">-</td>
+  </tr>
+  <tr>
     <td class="tg-c3ow" rowspan="3">i7 3610QM</td>
     <td class="tg-c3ow">1</td>
     <td class="tg-c3ow">0.002000</td>
@@ -159,6 +178,44 @@ For each processor there is a latency based on the type of function.
     <td class="tg-c3ow">0.598670</td>
     <td class="tg-c3ow">0.736790</td>
   </tr>
+  <tr>
+    <td class="tg-c3ow" rowspan="3">i7 4790</td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">0.001000</td>
+    <td class="tg-c3ow">0.000000</td>
+    <td class="tg-c3ow">0.000000</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">0.302000</td>
+    <td class="tg-c3ow">0.170700</td>
+    <td class="tg-c3ow">0.175100</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">100</td>
+    <td class="tg-c3ow">0.428780</td>
+    <td class="tg-c3ow">0.415490</td>
+    <td class="tg-c3ow">0.503520</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" rowspan="3">Swarm (2 devices)</td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">0.001000</td>
+    <td class="tg-c3ow">0.001000</td>
+    <td class="tg-c3ow">0.000000</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">0.333800</td>
+    <td class="tg-c3ow">0.166200</td>
+    <td class="tg-c3ow">0.161700</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">100</td>
+    <td class="tg-c3ow">0.458110</td>
+    <td class="tg-c3ow">0.440300</td>
+    <td class="tg-c3ow">0.423090</td>
+  </tr>
 </table>
 
 ## Chart
@@ -174,4 +231,3 @@ Test on i7 3610QM, from 1 to 100 threads, all the types of functions:
 
 Test on Raspberry Pi, from 1 to 100 threads, all the types of functions:
 ![alt text]()
-
